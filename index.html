@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>はじめてのmBaaS</title>
+  </head>
+  <script type="text/javascript" src="ncmb.miin.js" charset="utf-8"></script>
+  <script>
+    //mobile backendアプリとの連携
+    var ncmb = new NCMB("034753488b423ec50f6e8261f8fb041b5bfb41f6fb05f96845a2ace98b039030","71b7060f766c2f11371ba846544388ee8081c15782b8c05ea269ce1f2f44185a");
+    
+    //クラスのTestClassを作成
+    var TestClass = ncmb.DataStore("TestClass");
+    //データストアへの登録
+    var testClass = new TestClass();
+    testClass.set("massage","Hello,NCMB!");
+    testClass.save()
+      .then(functin(){
+        //保存に成功した場合の処理
+      })
+      .catch(function(err){
+        //保存に失敗した場合の処理
+      });
+  </script>
+</html>
